@@ -1,0 +1,50 @@
+<view class="bg-white nav text-center fixed">
+	<view class="cu-bar bg-white">
+		<view class="action">
+		</view>
+		<view class="content text-bold">
+			科大圈
+		</view>
+		<view class="action" bindtap="edit">
+			<text class="cuIcon-edit text-red"></text>
+		</view>
+	</view>
+</view>
+
+<view style="margin-top:45px" />
+
+
+<view class="cu-card dynamic no-card margin-top" style="top:100px" wx:for="{{postList}}" wx:key="{{item.id}}">
+	<view class="cu-item shadow" bindtap="tapCard" data-postId="{{item.id}}">
+		<view class="cu-list menu-avatar">
+			<view class="cu-item">
+				<view class="cu-avatar round lg" style="background-image:url({{item.avatar}});"></view>
+				<view class="content flex-sub">
+					<view>{{item.showUserName}}</view>
+					<view class="text-gray text-sm flex justify-between">
+						{{item.postTime}}
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="text-content">
+			<text> {{item.content}} </text>
+		</view>
+
+		<view wx:if="{{item.singlePic}}" class="grid padding-lr">
+			<image src="{{item.imageInfoList[0].url}}" mode="heightFix" lazy-load="true"></image>
+		</view>
+		<view wx:else class="grid flex-sub padding-lr col-{{item.col}} grid-square">
+			<view class="bg-img " style="background-image:url({{image.url}});" wx:for="{{item.imageInfoList}}" wx:for-item="image">
+			</view>
+		</view>
+
+
+		<view class="cu-bar btn-group solids-top" style="margin-top:15px;min-height:40px">
+			<button class="cu-btn bg-white cuIcon-message lg" bindtap="message">{{item.commentCount == 0? '评论' : item.commentCount}}</button>
+			<button class="cu-btn bg-white cuIcon-appreciate{{item.hasLike ? 'fill text-red ' : ''}} lg" bindtap="tapLike" data-post-index="{{index}}" catchtap>{{item.likeCount == 0? '赞' : item.likeCount}}</button>
+		</view>
+	</view>
+
+</view>
+

@@ -1,0 +1,26 @@
+<!--pages/community/authLogin.wxml-->
+
+
+
+<view class="container">
+  <image src="/images/logo.png" class="png" mode="widthFix"></image>
+  <text class="userinfo-nickname">欢迎来到科大圈</text>
+
+	<text class="userinfo-nickname">发现黑科大的另一面</text>
+
+
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> -->
+  <view class="usermotto">
+    <button class="cu-btn bg-cyan round lg shadow" open-type="getUserInfo" bindgetuserinfo="getUserInfo">创建一个新身份</button>
+  </view>
+</view>
+
+  <view class="text-center">请勿冒用他人教务网账号</view>
+  <view class="text-center">请勿发布和传播、违反国家法律法规的信息及内容</view>
+  <view class="text-center">上诉两种情况核实后，将对违法用户进行永久封禁处理</view>

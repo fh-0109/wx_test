@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/core/search/search",     
+    "pages/core/ks/ks",
+    "pages/more/login",
+    "pages/more/more",
+    "pages/more/about",
+    "pages/core/xs/xs",
+    "pages/core/kb/kb",
+    "pages/core/cj/cj",
+    "pages/core/jy/jy",
+    "pages/core/ykt/ykt",
+    "pages/more/append",
+    "pages/core/net_card/net_card",
+    "pages/core/yellow_page/yellow_page",
+    "pages/core/empty_classroom/empty_classroom",
+    "pages/news/news",
+    "pages/community/authLogin/authLogin",
+    "pages/community/register/register",
+    "pages/community/index/index",
+    "pages/community/edit/edit",
+    "pages/community/detail/detail",
+    "pages/auth/auth"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#73b4ef",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "黑科校际Pro",
+    "backgroundColor": "#666",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#7f848a",
+    "selectedColor": "#7acfa6",
+    "backgroundColor": "#f7f6fb",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index/index.png",
+        "selectedIconPath": "images/index/index@active.png"
+      },
+      {
+        "pagePath": "pages/community/index/index",
+        "text": "科大圈",
+        "iconPath": "images/logo.png",
+        "selectedIconPath": "images/logo.png"
+      },
+      {
+        "pagePath": "pages/more/more",
+        "text": "个人信息",
+        "iconPath": "images/index/more.png",
+        "selectedIconPath": "images/index/more@active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 50000,
+    "uploadFile": 30000,
+    "downloadFile": 30000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}

@@ -1,0 +1,22 @@
+<!--pages/core/search.wxml-->
+<import src="post-item/post-item-template.wxml" />
+<include src="../../../wxSearchView/wxSearchView.wxml" />
+<block wx:if="{{resultList}}" wx:for="{{resultList}}" wx:for-item="item" wx:for-index="idx">
+  <!--//template-->
+  <!-- <view catchtap="onPostTap" data-postId="{{item.postId}}">
+    <template is="postItem" data="{{...item}}" />
+  </view> -->
+  <template is="postItem" data="{{...item}}" />
+
+</block>
+
+<block wx:if="{{showText}}">
+  <view class='desc-content'>欢迎你使用我们的新功能</view>
+  <view class='desc-content'>譬如搜：计算机 既能搜到计算机学院 开设的课程 </view>
+  <view class='desc-content'>也能搜到课程名带这个关键字的课程 </view>
+  <view class='desc-content'>当然他还能匹配到老师名，班级名</view>
+  <view class='desc-content'>后面我们为对结果相关度和界面进行优化</view>
+  <view class='desc-content'>使用中遇到问题，或者对我们团队感兴趣</view>
+  <view class='desc-content'>欢迎加微信：chenjunrong240549</view>
+  <view class='desc-content'>祝好~</view>
+</block>

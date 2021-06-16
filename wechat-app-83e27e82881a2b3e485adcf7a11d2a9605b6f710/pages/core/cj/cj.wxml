@@ -1,0 +1,104 @@
+<!--cj.wxml-->
+<view class="container">
+  <!-- <view wx:if="{{remind}}" class="remind-box">
+        <image class="remind-img" src="/images/index/nothing.png"></image>
+        <text class="remind-text">{{remind}}</text>
+    </view> -->
+
+  <!-- <block wx:else>  -->
+  <view class="cj-header">
+    <view class="cj-text">
+      <text class="cj-header-title">成绩查询</text>
+      <text class="cj-header-info">学号：{{id}}</text>
+      <text class="cj-header-info">姓名：{{name}}</text>
+      <text class="cj-header-info">绩点：{{gpa}}</text>
+      <text class="cj-header-info">绩点专业排名：第{{gpaRank}} （共计 {{gpaRankSize}}）</text>
+      <text class="cj-header-info">公共选修课（任选）学分：{{optionalCredit}}分</text>
+
+    </view>
+    <image class="cj-bg" src="/images/core/cj.png"></image>
+  </view>
+  
+  <view  class="cj-ad">
+    <ad unit-id="adunit-38e59c7d170b5457"></ad>
+  </view> 
+
+  <view class="cj-info-ctn" bindtap='subscribeTap'>
+    <view class="cj-grade">
+      <view class="cj-grade-term">
+        <view class="cj-grade-fst">
+          <text>本学期成绩</text>
+        </view>
+      </view>
+    </view>
+    <view class="cj-info-box">
+      <block wx:if="{{!haveGrade}}">
+        <view class="cj-grade-fst">
+          <text>暂时没成绩，可以下拉刷新</text>
+        </view>
+      </block>
+      <block wx:else>
+        <block wx:for="{{currentGradeList}}" wx:for-item="grade" wx:for-index="idx">
+
+          <view class="cj-info" >
+            <block wx:if="{{grade.courseNameSize < 18}}">
+              <text class="cj-course-name">{{grade.courseName}}</text>
+            </block>
+            <block wx:else>
+              <text class="cj-course-name-small">{{grade.courseName}}</text>
+            </block>
+
+            <view class="cj-info-summary">
+              <text class="cj-data">成绩：{{grade.score}}</text>
+              <text class="cj-data">学分：{{grade.credit}}</text>
+
+
+              <block wx:if="{{grade.showDetail}}">
+                <text class="cj-data">绩点：{{grade.gradePoint}}</text>
+                <text class="cj-data">排名：{{grade.rank}}</text>
+              </block>
+            </view>
+            <view class="cj-info-summary" style="font-size: 80%;   color: silver;">
+              <text class="cj-data">类型：{{grade.coursePropertyName}}</text>
+              <text class="cj-data">课程号：{{grade.courseNum}}</text>
+              <text class="cj-data">课程序号：{{grade.courseOrder}}</text>
+            </view>
+
+            <text class="cj-operate-time">更新时间：{{grade.operateTime}}</text>
+          </view>        
+        </block>
+      </block>
+    </view>
+  </view>
+
+
+  <view class="cj-info-ctn" wx:for="{{restTermList}}" wx:for-item="term">
+    <view class="cj-grade">
+      <view class="cj-grade-term">
+        <view class="cj-grade-fst">
+          <text>{{term.termName}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="cj-info-box">
+      <view class="cj-info" wx:for="{{term.gradeList}}" wx:key="courseid" wx:for-item="grade">
+        <text class="cj-course-name">{{grade.courseName}}</text>
+
+        <view class="cj-info-summary">
+          <text class="cj-data">成绩：{{grade.score}}</text>
+          <text class="cj-data">学分：{{grade.credit}}</text>
+          <text class="cj-data">绩点：{{grade.gradePoint}}</text>
+        </view>
+        <view class="cj-info-summary" style="font-size: 80%;   color: silver;">
+          <text class="cj-data">类型：{{grade.coursePropertyName}}</text>
+          <text class="cj-data">课程号：{{grade.courseNum}}</text>
+          <text class="cj-data">课程序号：{{grade.courseOrder}}</text>
+        </view>
+
+        <text class="cj-operate-time">更新时间：{{grade.operateTime}}</text>
+
+      </view>
+    </view>
+  </view>
+  <!-- </block> -->
+</view>

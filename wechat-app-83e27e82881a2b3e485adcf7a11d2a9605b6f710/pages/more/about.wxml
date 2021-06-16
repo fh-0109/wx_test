@@ -1,0 +1,108 @@
+<!--about.wxml-->
+<view class="container">
+  <!-- <view class="header">
+    <view class="black-cover"></view>
+     <image class="logo" ></image> 
+     <!-- <image class="title" src="/images/more/hkxj.png"></image>  -->
+  <!-- </view> -->
+  <view class="content">
+    <view class="version">
+      <view class="version-title">
+        <text class="title-name">黑科技</text>
+        <text class="version-text">{{version}}</text>
+        <text class="version-text">公测</text>
+      </view>
+      <view bindtap="toggleLog">
+        <text class="version-log-link update-log" wx:if="{{!showLog}}">更新日志</text> 
+        <text class="version-log-link" wx:else>简介</text> 
+      </view>
+    </view>
+    <view class="describe" wx:if="{{!showLog}}">
+        <text class="desc-title">简介</text>
+        <view class="desc-list">
+          <!--<text class="desc-list-item">官网：https://yicodes.com</text>-->
+          <!--<text class="desc-list-item">Github：https://github.com/cncoder</text>-->
+        </view>
+        <text class="desc-content">黑科校际PRO，顾名思义，比原来要更加的强大</text>
+        <text class="desc-content">小程序的功能与于公众号一样丰富而强大</text>
+        <text class="desc-content">当然现在只是起步阶段</text>
+        <text class="desc-content">这个程序在往后阶段会添加更多美妙的功能，我们期望你跟这个小程序一起成长</text>
+        <text class="desc-content"></text>
+        <text class="desc-content">这个小程序不止于小！！</text>
+        <text class="desc-content">我们更为他锻造了强大的内心</text>
+        <text class="desc-content">在其背后的云端主机采用了异步IO网络框架加nginx反向进行反向代理。甚至能支持上万数量级的并发访问。</text>
+        <text class="desc-content"></text>
+        <text class="desc-content">如有使用过程遇到任何bug记得及时向我们反馈</text>
+        <text class="desc-content"></text>
+        <text class="desc-content">开发者微信id：chenjunrong240549</text>
+        <text class="desc-content"></text>
+    </view>
+    <view class="log-list" wx:else>
+        <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.0.5公测版</text>
+            <text class="desc-time">2017.8.24</text>
+          </view>
+          <text class="desc-content">公测</text>
+            <view class="desc-list">
+            <text class="desc-list-item">优化了后台逻辑</text>
+            <text class="desc-list-item">时隔三个月再跟新我明白了一个道理，修复了些bug</text>
+            <text class="desc-list-item">做也许好过不做，但不假思索就动手还不如不做</text>
+            </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.0.4公测版</text>
+            <text class="desc-time">2017.5.23</text>
+          </view>
+          <text class="desc-content">公测</text>
+            <view class="desc-list">
+            <text class="desc-list-item">因为微信审核原因这个程序一些很棒的功能无奈被砍掉</text>
+            <text class="desc-list-item">当然这些功能以后肯定会有机会跟大家再见面</text>
+            <text class="desc-list-item">期待有你跟这个程序一起变得更好</text>
+            </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.0.3低调内测版</text>
+            <text class="desc-time">2017.5.5</text>
+          </view>
+          <text class="desc-content">做了微小的更新</text>
+            <view class="desc-list">
+            <text class="desc-list-item">对成绩的读取进行了加速</text>
+            <text class="desc-list-item">二次读取成绩的速度快到令人发指</text>
+            <text class="desc-list-item">对后台处理登陆逻辑进行了优化</text>
+            <text class="desc-list-item">强力增加后台稳定性</text>
+          </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.0.2 内测版</text>
+            <text class="desc-time">2017.5.3</text>
+          </view>
+          <text class="desc-content">开启留言功能</text>
+            <view class="desc-list">
+            <text class="desc-list-item">开始内测留言功能</text>
+            <text class="desc-list-item">修复部分院系课表无法显示</text>
+            <text class="desc-list-item">修改首页课表上课时间</text>
+            <text class="desc-list-item">增加了成绩查询</text>
+          </view>
+      </view>
+      <view class="describe">
+          <view class="desc-title">
+            <text class="desc-v">v0.0.1 内测版</text>
+            <text class="desc-time">2017.4.28</text>
+          </view>
+          <text class="desc-content">完成第一个课表功能，开始低调内测</text>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer-lanshan">
+        <image src="/images/more/lanshan.png"></image>
+        <text>黑科校际PRO</text>
+    </view>
+    <text>Powered by JR Chan</text>
+    <text>Copyright @ {{year}} All Rights Reserved</text>
+  </view>
+</view>

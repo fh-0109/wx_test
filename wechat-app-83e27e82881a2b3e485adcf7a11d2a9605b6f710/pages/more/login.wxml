@@ -1,0 +1,62 @@
+<!--login.wxml-->
+<view class="container">
+	<view class="remind-box" wx:if="{{remind == '加载中'}}">
+		<image class="remind-img" src="/images/index/loading.gif"></image>
+	</view>
+	<block wx:else>
+		<image class="title" src="/images/more/test.png"></image>
+		<view class="content">
+			<view class="hd" style="transform:rotateZ({{angle}}deg);">
+				<!--<image class="logo" src="/images/more/logo.png"></image>-->
+				<image class="wave" src="/images/more/wave.png" mode="aspectFill"></image>
+				<image class="wave wave-bg" src="/images/more/wave.png" mode="aspectFill"></image>
+			</view>
+			<view class="bd">
+				<form class="login-form">
+					<view class="input-group {{userid_focus ? 'active' : ''}}">
+						<text class="input-label">帐号</text>
+						<input type="number" cursor-spacing="30" id="userid" maxlength="10" placeholder="请输入学号" bindinput="useridInput" bindfocus="inputFocus" bindblur="inputBlur" />
+					</view>
+					<view class="input-group {{passwd_focus ? 'active' : ''}}">
+						<text class="input-label">密码</text>
+						<input password="true" cursor-spacing="30" id="passwd" placeholder="初始密码或者已更改密码" bindinput="passwdInput" bindfocus="inputFocus" bindblur="inputBlur" />
+					</view>
+					<view class="login-help" bindtap="showHelp">
+						<text>注意</text>
+						<image class="login-help-img" src="/images/more/help.png"></image>
+					</view>
+
+				</form>
+				<view class="confirm-btn" bindtap="bind">
+					<text>确认绑定</text>
+				</view>
+
+        <button class="feedback-btn" open-type="feedback">意见及问题反馈</button>
+			</view>
+
+			<view class="help" id="help" wx:if="{{help_status}}" bindtap="tapHelp">
+				<view class="box">
+					<view class="box-hd">
+						<text class="box-title">注意</text>
+						<image class="box-close" src="/images/more/close.png" bindtap="hideHelp"></image>
+					</view>
+					<view class="box-bd">
+						<view class="help-q">安全问题</view>
+						<view class="help-a">
+							<text>我们直接将账号密码提交到教务网</text>
+							<text>你们的个人信息将直接存储于你的个人设备上</text>
+							<text>数据库不会存储你任何的个人信息</text>
+						</view>
+						<view class="help-q">无法登陆</view>
+						<view class="help-a">
+							<text>学校教务网繁忙</text>
+							<text>检查你的网络</text>
+						</view>
+					</view>
+				</view>
+			</view>
+
+		</view>
+	</block>
+
+</view>

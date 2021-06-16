@@ -1,0 +1,30 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/more/login",
+          "pathName": "pages/more/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/core/xs/xs",
+          "pathName": "pages/core/xs/xs",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

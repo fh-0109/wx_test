@@ -1,0 +1,15 @@
+<template name="postItem">
+  <view class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="/images/more/hkxj.png"></image>
+      <text class="post-date">{{idx}}.    {{weekName}}    {{classOrderName}}</text>
+    </view>
+    <text class="post-title">{{courseName}}</text>
+    <text class="post-content">教室：{{classRoomName}}</text>
+    <text class="post-content">老师：{{teacherNameList}}</text>
+    <text class="post-content">班级：{{classNameList}}</text>
+    <text class="post-content">专业：{{subjectNameList}}</text>
+    <text class="post-content">开学院系：{{academyName}}</text>
+
+  </view>
+</template>

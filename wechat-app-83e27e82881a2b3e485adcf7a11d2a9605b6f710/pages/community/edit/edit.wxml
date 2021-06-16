@@ -1,0 +1,70 @@
+<view>
+	<view class="cu-form-group">
+		<textarea maxlength="140" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="这一刻的想法" auto-height bindinput="textInput"></textarea>
+	</view>
+	<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			选图片
+		</view>
+		<view class="action">
+			{{imgList.length}}/9
+		</view>
+	</view>
+	<view class="cu-form-group ">
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index].path}}">
+				<image src='{{imgList[index].path}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+
+	<view class="cu-list menu {{menuBorder?'sm-border':''}} card-menu margin-top">
+
+		<view class="cu-item arrow" bindtap="showModal" data-target="RadioModal">
+			<view class="content">
+				<text class="cuIcon-profilefill text-purple"></text>
+				<text class="text-grey">选择身份</text>
+			</view>
+			<view class="action">
+				<view class="cu-tag round bg-purple light">{{showName}}</view>
+			</view>
+		</view>
+		<!-- <view class="cu-item {{menuArrow?'arrow':''}}">
+			<view class="content">
+				<text class="cuIcon-tagfill text-red"></text>
+				<text class="text-grey">标签</text>
+			</view>
+			<view class="action">
+				<view class="cu-tag round bg-orange light">音乐</view>
+				<view class="cu-tag round bg-olive light">电影</view>
+				<view class="cu-tag round bg-blue light">旅行</view>
+			</view>
+		</view> -->
+
+	</view>
+
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-green margin-tb-sm lg" bindtap="send">发布</button>
+	</view>
+
+	<view class="cu-modal {{modalName=='RadioModal'?'show':''}}" bindtap="hideModal">
+		<view class="cu-dialog" catchtap>
+			<radio-group class="block" bindchange="radioChange">
+				<view class="cu-list menu text-left">
+					<view class="cu-item" wx:for="{{profileList}}" wx:key="name" >
+						<label class="flex justify-between align-center flex-sub" >
+							<view class="flex-sub">{{item.showName}}</view>
+							<radio class="round" value="{{index}}" checked="{{item.checked}}"></radio>
+						</label>
+					</view>
+				</view>
+			</radio-group>
+		</view>
+	</view>
+</view>

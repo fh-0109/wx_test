@@ -1,0 +1,19 @@
+	<view class="solid-bottom text-xl padding">
+		<text class="text-black text-bold" >请授权与注册时一致的手机号</text>
+		<text class="text-black text-bold" >{{showMobile}}</text>
+
+	</view>
+
+	<view class="cu-form-group">
+		<view class="title">手机号</view>
+		<view style="text-align:center">{{mobile}}</view>
+
+		<block wx:if="{{mobile == 0}}">
+			<button class="cu-btn bg-green shadow" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权获取手机号</button>
+		</block>
+	</view>
+
+
+	<button class="cu-btn block bg-blue margin-tb-sm lg" style=" margin-top:60px" bindtap="submit">
+		提交
+	</button>

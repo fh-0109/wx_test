@@ -1,0 +1,88 @@
+<!--pages/core/net_card/net_card.wxml-->
+<!--ykt.wxml-->
+<view class="container">
+     <view wx:if="{{!net_card}}" class="remind-box">
+       <view class="bd">
+        <form class="login-form">
+          <view class="input-group {{userid_focus ? 'active' : ''}}">
+            <text class="input-label">帐号</text>
+            <input type="number" cursor-spacing="30" id="userid" maxlength="13" placeholder="输入卡号数字部分" bindinput="useridInput" bindfocus="inputFocus" bindblur="inputBlur" />
+          </view>
+          <view class="input-group {{passwd_focus ? 'active' : ''}}">
+            <text class="input-label">密码</text>
+            <input password="true" cursor-spacing="30" id="passwd" placeholder="" bindinput="passwdInput" bindfocus="inputFocus" bindblur="inputBlur" />
+          </view>
+          <view class="login-help" bindtap="showHelp">
+            <text>注意</text>
+            <image class="login-help-img" src="/images/more/help.png"></image>
+          </view>
+        </form>
+        <view class="confirm-btn" bindtap="bind">
+            <text>确认绑定</text>
+        </view>
+      </view>
+    </view> 
+     <block wx:else> 
+        <view class="ykt-card">
+            <view class="ykt-black-line"></view>
+            <view class="ykt-content">
+                <view class="ykt-ye">
+                    <text class="ykt-ye-name">余额</text>
+                    <view class="ykt-ye-money">
+                        <text class="ykt-ye-value">{{balance}}</text>元
+                    </view>
+                </view>
+                <view class="ykt-img">
+                    <image src="/images/core/ykt/card-bg.png"></image>
+                </view>
+            </view>
+            <view class="ykt-card-more">
+                <text class="ykt-ye-time">开卡时间：{{last_time}}</text>
+                <!-- <text class="ykt-ye-id">卡号：{{ykt_id}}</text> -->
+            </view>
+            <!-- <view class="ykt-card-more">
+                <text class="ykt-ye-time">刷新时间：{{last_time}}</text>
+                 <text class="ykt-ye-id">卡号：{{ykt_id}}</text> 
+            </view>  -->
+        </view>
+
+        
+        <view class="balance-consumption" bindtap="changeCard">
+             <!-- <text class="{{switchBtn ? 'current-btn' : ''}}" id="balance">余额</text>  -->
+            <text class="{{switchBtn ? '' : 'current-btn'}}" id="cost">换卡</text>
+        </view>
+        <text class="grid-remind">近10次使用情况：</text>
+        <view class="grid-wraper">
+            <view wx:if="{{canvas_remind}}" class="remind-box">
+                <image wx:if="{{canvas_remind == '加载中'}}" class="remind-img" src="/images/index/loading.gif"></image>
+            </view>
+            <block wx:else>
+                <canvas id="ykt-canvas" canvas-id="firstCanvas" bindtap="canvasTap"></canvas> 
+                <view class="line" style="left: {{lineLeft}}px;"></view>
+                <view class="y-text">{{switchBtn ? "余额" : "交易额"}}</view>
+                <view class="x-text">最近交易</view>
+            </block>
+        </view>
+        <text class="detail-remind">点击上图查看对应交易详情</text>
+        <view class="ykt-detail-wraper">
+            <view class="ykt-head">
+                <text class="ykt-type-name">交易详情</text>
+            </view>                          
+            <view class="detail-list">
+                <view class="detail-item">
+                    <text class="detail-item-label">开始时间</text>
+                    <text class="detail-item-value">{{tapDetail[1]}}</text>
+                </view>
+                <view class="detail-item">
+                    <text class="detail-item-label">结束时间</text>
+                    <text class="detail-item-value">{{tapDetail[2]}}</text>
+                </view>
+                <view class="detail-item">
+                    <text class="detail-item-label">使用金额</text>
+                    <text class="detail-item-value">{{tapDetail[3]}}</text>
+                </view>
+            </view>
+        </view>
+    
+     </block> 
+</view>

@@ -1,0 +1,59 @@
+.date{
+  margin: 30rpx;
+  color: #209ac0;
+  text-align: center
+}
+.date_picker{
+  width: 89%;
+  height: 100rpx;
+  margin-left: 5%;
+  border: 3rpx solid cadetblue;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 10rpx;
+  color: #209ac0;
+}
+.chaxun{
+  background-color:  #209ac0;
+  width: 89%;
+  margin-top: 50rpx;
+  color: white;
+  margin-left:5%;
+}
+
+.flex-wrp {
+  display: flex;
+  font-size: small;
+  margin: 1px;
+}
+
+.flex-item {
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  letter-spacing: 0;
+  width: 100px;
+  border-style: solid;
+  border-width: 0.5px;
+  height: 20px;
+  text-align:center;
+  border-color: aliceblue;
+}
+
+.result {
+  margin-top: 20px
+}
+
+.result-title {
+  background: #EEEEEE;
+  color: #616161;
+}
+
+.result-item {
+  background: #F7F7F7;
+  color: #212121;
+}
+
+.result-item-current {
+  color: #08B2CC; 
+}

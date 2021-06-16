@@ -1,0 +1,77 @@
+<!--about.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="describe" wx:if="{{!showLog}}">
+      <text class="desc-title">加入我们</text>
+      <view class="desc-list">
+        <!--<text class="desc-list-item">官网：https://yicodes.com</text>-->
+        <!--<text class="desc-list-item">Github：https://github.com/cncoder</text>-->
+      </view>
+      <text class="desc-content">欢迎你朋友，当你来到这一页的时候，我们便有了一同工作的契机。</text>
+      <text class="desc-content">如果有兴趣且听我细细道来。</text>
+      <text class="desc-content">在2019-12-17 12:43:42 黑科校际迎来了本学期绑定的第一万位新用户。</text>
+
+      <text class="desc-content">我们是自发的兴趣小组，没有繁文缛节，没有老师和校方的任何介入。</text>
+      <text class="desc-content">我们热爱自由，19年我们通过线上交流就完成了所有功能的开发。只要你愿意，你可以在这个星球的任何一个地方和黑科校际一起工作。</text>
+
+      <text class="desc-content">无论在业余时间用怎样的态度对待编程，我们在工作中，目的是解决问题，做好产品，而不是「写代码」。</text>
+
+      <text class="desc-content">之前有很多同学联系我们的时候不清楚自己能做什么，那么不妨先思考一下你能为同学带来什么样的价值</text>
+
+      <text class="desc-content">从数据中为发掘更多的价值，为同学带来便利是我们的最终目标。</text>
+
+      <text class="desc-content">我们坚持以结果为导向，做更加出色的用户产品。</text>
+      <text class="desc-content">我们相信产品好不好，看数据；而不是自己的感觉。</text>
+
+      <text class="desc-content">如果你觉得我们是臭味相投的人，不妨认识一下。</text>
+      <text class="desc-content" style="font-weight: bold">以下职位长期有效</text>
+      <text class="desc-content"></text>
+
+      <text class="desc-title">用户产品</text>
+      <text class="desc-content">1.负责校园业务的产品方向、功能设计、用户增长分析工作；</text>
+      <text class="desc-content">2.发掘用户的需求和痛点，提出有效的解决方案。完善小程序和公众号的功能逻辑，核心交互的逻辑。</text>
+
+      <text class="desc-content"></text>
+      <text class="desc-title">UI设计</text>
+      <text class="desc-content">1.负责小程序的交互原型设计，对产品的整体用户体验和交互质量负责</text>
+      <text class="desc-content">2.持续跟进产品，跟进用户反馈结果优化用户体验</text>
+
+      <text class="desc-content"></text>
+      <text class="desc-title">前端开发</text>
+      <text class="desc-content">1.熟悉HTML/CSS/JavaScript等主流Web前端技术</text>
+      <text class="desc-content">2.负责小程序的兼容性支持、交互设计、前后端分离</text>
+
+      <text class="desc-content"></text>
+      <text class="desc-title">后端开发</text>
+      <text class="desc-content">1.熟练使用Java语言，熟悉Spring，SpringMVC，Mybatis框架的使用，有项目开发经验优先</text>
+      <text class="desc-content">2.负责产品提出的新功能的按时交付和开发</text>
+      <text class="desc-content">3.负责核心功能的自动化测试流程的开发（最具挑战性的工作）</text>
+
+      <text class="desc-content"></text>
+      <text class="desc-content" style="font-weight: bold">每个项目完成以后，参与人员都有应有的报酬！</text>
+      <text class="desc-content">从这里毕业的同学或者即将毕业的同学，都已经拿到了互联网公司和国企的offer。</text>
+
+      <text class="desc-content"></text>
+      <text class="desc-title">关于作者</text>
+      <text class="desc-content">笔者18年毕业后，先后在去哪儿旅行的报价抓取团队和客户端团队工作。</text>
+      <text class="desc-content">于2019年春晚参与百度合作的抢红包业务的开发</text>
+      <text class="desc-content">参与了酒店主流程用户体验优化，对酒店客户端的浏览收藏页的重构工作</text>
+      <text class="desc-content">毕业后我也一直参与整个小程序的开发与改进，期待未来能与你一起完成更多有挑战性的工作。</text>
+      <text class="desc-content"></text>
+      <text class="desc-content">期待你的加入！</text>
+
+
+
+      <text class="desc-content">有意向的同学联系微信：chenjunrong240549</text>
+      <text class="desc-content"></text>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer-lanshan">
+      <image src="/images/more/lanshan.png"></image>
+      <text>黑科校际PRO</text>
+    </view>
+    <text>Powered by JR Chan</text>
+    <text>Copyright @ {{year}} All Rights Reserved</text>
+  </view>
+</view>

@@ -1,0 +1,45 @@
+<form bindsubmit="search">
+  <!--获得周查询的值-->
+  <view class="section">
+    <view class="date">日期：</view>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" value="{{multiIndex}}" range="{{multiArray}}" name="starTitle">
+      <view class="date_picker">
+        {{multiArray[0][multiIndex[0]]}}
+        <image src='/images/core/down.png' style='width:20rpx;height:22rpx;'></image>
+        {{multiArray[1][multiIndex[1]]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="section">
+    <view class="date">教学楼：</view>
+    <picker bindchange="bindPickerChange" value="{{locationIndex}}" range="{{locationArray}}" name="timeke">
+      <view class="date_picker">
+        {{locationArray[locationIndex]}}
+      </view>
+    </picker>
+  </view>
+  <!-- 查询结果 -->
+  <button class='chaxun' form-type="submit">点击查询</button>
+</form>
+
+<view class="result" wx:if="{{chaxunResult}}">
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view wx:for="{{array}}" class="flex-item result-title">{{item}}</view>
+  </view>
+  <view class="flex-wrp" wx:for="{{chaxunResult}}" wx:for-item="room" style="flex-direction:row;">
+    <!-- <view wx:for="{{array}}" wx:for-index="idx" class="flex-item result-item" wx:for-item="order">
+      <view wx:if="{{idx == orderIndex}}" class="result-item-current">{{room.name}}</view>
+    </view> -->
+
+    <view wx:for="{{room.orderList}}" class="flex-item result-item" wx:for-item="order" wx:for-index="idx">
+        <view wx:if="{{order == 1}}">
+          <view wx:if="{{idx == orderIndex}}" class="result-item-current">{{room.urpClassroom.name}}</view>
+          <view wx:else>{{room.urpClassroom.name}}</view>
+        </view>
+        <view wx:else></view>
+    </view>
+  </view>
+
+
+</view>

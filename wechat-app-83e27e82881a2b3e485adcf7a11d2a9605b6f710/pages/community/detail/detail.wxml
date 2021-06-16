@@ -1,0 +1,81 @@
+<view class="cu-card dynamic no-card">
+	<view class="cu-item shadow">
+		<view class="cu-list menu-avatar">
+			<view class="cu-item">
+				<view class="cu-avatar round lg" style="background-image:url({{post.avatar}});"></view>
+				<view class="content flex-sub">
+					<view>{{post.showUserName}}</view>
+					<view class="text-orange text-sm flex justify-between">
+						{{post.postTime}}
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="text-content" style="white-space:pre-wrapl ;padding-bottom: 20px" wx:if="{{post.content}}" >
+			<text>{{post.content}}</text>
+		</view>
+		<view wx:if="{{post.singlePic}}" class="grid padding-lr" style="padding-bottom: 20px" bindtap="viewImage" data-index="{{0}}">
+			<image src="{{post.imageInfoList[0].url}}" mode="widthFix"></image>
+		</view>
+		<view wx:else class="grid flex-sub padding-lr col-{{post.col}} grid-square" style="padding-bottom: 20px">
+			<view class="bg-img " style="background-image:url({{image.url}});" wx:for="{{post.imageInfoList}}" wx:for-item="image" bindtap="viewImage" data-index="{{index}}">
+			</view>
+		</view>
+	</view>
+</view>
+
+
+
+<view class="margin-top cu-card dynamic no-card">
+	<view wx:if="{{!hasComment}}">
+		<view class="bg-white flex-sub radius shadow-lg">
+			<image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx"></image>
+			<view class="text-bold" style="text-align:center;"> 还没有评论，快来评论吧！ </view>
+		</view>
+	</view>
+
+	<view class="cu-list menu-avatar comment" wx:for="{{commentList}}" wx:key="{{item.id}}">
+		<view class="cu-item">
+			<view class="cu-avatar round" style="background-image:url({{item.root.postUser.avatar}});"></view>
+			<view class="content">
+				<view class="text-grey">{{item.root.showUserName}}</view>
+				<view class="text-black text-content text-df" bindtap="reply" data-root-index="{{index}}">
+					{{item.root.content}}
+				</view>
+
+				<view class="bg-gray light padding-sm radius margin-top-sm  text-sm" wx:for="{{item.replyList}}" wx:for-item="reply" wx:for-index="replyIndex">
+					<view class="grid">
+						<view>{{reply.showUserName}}：</view>
+						<view class="flex-sub" bindtap="reply" data-root-index="{{index}}" data-reply-index="{{replyIndex}}">{{reply.content}}</view>
+					</view>
+				</view>
+
+				<view class="margin-top-sm flex justify-between">
+					<view class="text-gray text-sm">{{item.root.postTime}}</view>
+					<view>
+						<text class="cuIcon-appreciate{{item.root.hasLike? 'fill text-red ' : ''}}" data-reply-index="{{index}}" bindtap="tapLike" data-content="{{1}}">{{item.root.likeCount == 0 ? '' : item.root.likeCount}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view style="padding-bottom:50px" />
+
+<block wx:if="{{!showComment}}">
+	<view class="cu-bar" style="margin-top:10px;min-height:7px;bottom:0; position:fixed; width:100% ">
+		<button class="bg-gary cuIcon-message " style="width:100%" bindtap="tapComment">{{post.commentCount == 0? '评论' : post.commentCount}}</button>
+		<button class="bg-gary cuIcon-appreciate{{post.hasLike ? 'fill text-red ' : ''}}" bindtap="tapLike" data-content="{{0}}" style="width:100%">{{post.likeCount == 0? '赞' : post.likeCount}}</button>
+	</view>
+</block>
+<view class="cu-modal {{showComment ? 'show' : ''}}" bindtap="hideModal">
+	<view class="cu-bar input nav" style="bottom:0; position:fixed; width:100%" catchtap>
+		<!-- <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-3.jpg);"></view> -->
+		<input class="solid-bottom" maxlength="140" cursor-spacing="5" placeholder="回复 {{replyUserName}}:" bindinput="commentInput"></input>
+		<!-- <view class="action">
+			<text class="cuIcon-emojifill text-grey"></text>
+		</view> -->
+		<button class="cu-btn bg-green shadow-blur" style="width:20%" bindtap="submitComment">发送</button>
+	</view>
+</view>
